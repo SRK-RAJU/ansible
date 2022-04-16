@@ -5,7 +5,7 @@ filebeat.inputs:
     - {{LOG_FILE}}
   fields:
     app: {{COMPONENT}}
-    env: {{ENV}}
+    env: {{DEV}}
 {% if LOG_TYPE == "json" %}
   json.keys_under_root: true
 {% endif %}
