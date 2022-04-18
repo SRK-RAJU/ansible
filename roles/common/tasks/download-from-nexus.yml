@@ -12,7 +12,7 @@
 
 - name: Download App Component
   get_url:
-      url: http://172.31.7.184:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
+      url: http://172.31.85.6:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
       dest: /tmp/{{COMPONENT}}.zip
       url_username: "{{NEXUS_USER}}"
       url_password: "{{NEXUS_PASS}}"
