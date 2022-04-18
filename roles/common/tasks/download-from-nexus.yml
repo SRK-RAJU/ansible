@@ -10,12 +10,12 @@
     state: directory
   when: APP_TYPE == "frontend" or APP_TYPE == "backend"
 
-- #name: Download App Component
-  #get_url:
-    #  url: http://172.31.85.6:8080/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
-   #   dest: /tmp/{{COMPONENT}}.zip
-    #  url_username: "{{NEXUS_USER}}"
-    #  url_password: "{{NEXUS_PASS}}"
+- name: Download App Component
+  ansible.builtin.get_url:
+      url: http://nexus.roboshop.internal:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
+      dest: /tmp/{{COMPONENT}}.zip
+      url_username: "{{NEXUS_USERNAME}}"
+      url_password: "{{NEXUS_PASSWORD}}"
 
 - name: Extract {{COMPONENT}} Code
   ansible.builtin.unarchive:
